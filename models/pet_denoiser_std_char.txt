@@ -1,0 +1,8 @@
+dual_channel:false
+architecture:SwinUNETR
+num_heads:(3,6,12,24)
+depths:(2,2,2,2)
+feature_size:24
+do_rate:0.0
+voxel_spacing:[2,2,2]
+block_size:(64,64,64)
