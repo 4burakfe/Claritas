@@ -4,8 +4,6 @@
 
 ---
 
----
-
 ## 🧠 Model Descriptions
 
 | Filename                   | Description |
@@ -26,6 +24,8 @@ GUI application for training PET denoising models **with tumor masks**.
 - Supports SwinUNETR and UNet
 - Custom loss functions (MSE, MAE, SSIM, tumor-weighted L1)
 - Real-time training plots and logging
+- Uses .npy files for training and validation
+- The input files shold have be in pairs in seperate folders with exact same names
 
 ### `Claritas_Train_UI_single_nomask.py`
 Same as above but for training without tumor segmentation masks.
