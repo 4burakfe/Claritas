@@ -9,13 +9,12 @@ block_size:(64,64,64)
 Trained on 66 FDG PET/CT scans with Siemens Biograph Horizon 4R scanner.
 Original voxels was 4.11392× 4.11392×1.50mm.
 Resampling was performed to isotropic voxel size of 2×2×2mm before training to increase generalizability.
-Average MSE reduction: 28.97% ± 5.57% 
-Average MAE reduction: 18.61% ± 2.50%  
-Average inverted SSIM reduction: 37.83% ± 3.05% 
-Average PSNR increase: 1.50 ± 0.32 dB 
-SUVmax Bias: –0.49 g/mL 
-SUVmean Bias: –0.17 g/mL 
-
+Average MSE reduction: 23.75% ± 6.04%  
+Average MAE reduction: 15.97% ± 2.60% 
+Average inverted SSIM reduction: 35.64% ± 2.97% 
+Average PSNR increase: 1.19 ± 0.33 dB 
+SUVmax Bias: –0.11 g/mL 
+SUVmean Bias: +0.04  g/mL 
 
 
 
