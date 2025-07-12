@@ -294,8 +294,8 @@ class PETDenoisingGUI:
         self.train_dir_noisy = self.add_folder_selector("Training Noisy Image Folder (*.npy):")
         self.train_dir_ref = self.add_folder_selector("Training Reference Image Folder (*.npy):")
 
-        self.val_dir_noisy = self.add_folder_selector("Validation Noisy Image Folder (*.nrrd):")
-        self.val_dir_ref = self.add_folder_selector("Validation Reference Image Folder (*.nrrd):")
+        self.val_dir_noisy = self.add_folder_selector("Validation Noisy Image Folder (*.npy):")
+        self.val_dir_ref = self.add_folder_selector("Validation Reference Image Folder (*.npy):")
 
 
         ## Only load necessary components
@@ -678,12 +678,12 @@ class PETDenoisingGUI:
             self.print(f"Val:   Loss={val_metrics['loss']:.6f}, MSE_Loss={val_metrics['mse']:.6f}, SSIM_Loss={val_metrics['ssim']:.6f},Edge_Loss={val_metrics['edge']:.6f},L1_Loss={val_metrics['l1']:.6f},Charbonnier_Loss={val_metrics['charbonnier']:.6f}")
             self.print(f"Train+Val time: {epoch_elapsed:.2f} sec (Validation: {val_elapsed:.2f} sec)")
 
-            """if val_metrics['loss'] < best_val_loss:
+            if val_metrics['loss'] < best_val_loss:
                 best_val_loss = val_metrics['loss']
                 torch.save(model.state_dict(),pth_filename)
-                self.print("Model saved based on Val_Loss.")"""
-            torch.save(model.state_dict(),pth_filename)
-            self.print("Model saved...")
+                self.print("Model saved based on Val_Loss.")
+#            torch.save(model.state_dict(),pth_filename)
+#            self.print("Model saved...")
 
 
 
