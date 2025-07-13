@@ -519,8 +519,7 @@ class PETDenoisingGUI:
             self.print(f"Model name to be saved is: {pth_file}")
 
         # The transforms to be applied before training. If you wish to add more variability, you are welcome to edit this section. Please refer to MONAI Transforms documentation. 
-        # Warning, the removal of gridpatchd will strip one layer from training tensor. If you remove it, you will also have to modify train model function.
-        # In the current configuration the batch size has to be 1 for the training. Warning, the inputs should be at least divisible by 32 to be safe. To prevent shape mismatch errors...
+
         train_transforms = Compose([
             # ✅ Add random flips
             RandFlipd(
@@ -578,12 +577,6 @@ class PETDenoisingGUI:
         self.train_model(model, train_loader, self.val_loader, optimizer, num_epochs=int(self.epoch_num.get()),pth_filename=pth_file)
 
         self.print(f"\nModel saved to {pth_file}")
-
-
-
-    # Returns loss function (first variable - as tensor), mse and ssim loss (as float - for logging and evaluation purposes)
-    # Will clamp values before ssim loss evaluation. Set data range in accordance with your data (will be absolutely different for BQML/SUV/counts etc.).
-
 
 
 
